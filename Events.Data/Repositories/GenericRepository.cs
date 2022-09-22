@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 using Events.Data.DataInterfaces;
 using Events.Data.Entities;
 
+
 namespace Events.Data.Repositories
 {
-    public abstract class EFGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
+    public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly DataContext _context;
         protected Microsoft.EntityFrameworkCore.DbSet<TEntity> _dbSet;
         
         protected IQueryable<TEntity> CollectionWithInclude { get; set; }
 
-        public EFGenericRepository(DataContext context)
+        public GenericRepository(DataContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();

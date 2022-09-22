@@ -1,7 +1,21 @@
-﻿namespace Events.Data.Repositories
+﻿using Events.Data.DataInterfaces;
+using Events.Data.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace Events.Data.Repositories
 {
-    public class PlanRepository
+    public class PlanRepository : GenericRepository<PlanEntity>, IPlanRepository
     {
+        private readonly DataContext _db;
+        
+        public PlanRepository(DataContext db) : base(db)
+        {
+            _db = db;
+            CollectionWithInclude = db.Plans
+                .Include(x => x.Speaches)
+                .ThenInclude(x => x.Speaker);
+
+        }
         
     }
 }

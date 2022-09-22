@@ -2,7 +2,7 @@
 
 namespace Events.Data.DataInterfaces
 {
-    public interface ISpeakerRepository : IGenericRepository<SpeachEntity>
+    public interface ISpeakerRepository : IGenericRepository<SpeakerEntity>
     {
         
     }
