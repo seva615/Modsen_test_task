@@ -1,7 +1,22 @@
-﻿namespace Events.Data.Repositories
+﻿using System.Data.Entity;
+using Events.Data.DataInterfaces;
+using Events.Data.Entities;
+using Microsoft.EntityFrameworkCore;
+
+
+namespace Events.Data.Repositories
 {
-    public class EventRepository
+    public class EventRepository : EFGenericRepository<EventEntity>, IEventRepository
     {
-        
+        private readonly DataContext _db;
+
+        public EventRepository(DataContext db) : base(db)
+        {
+            _db = db;
+            CollectionWithInclude = db.Events
+                .Include(x=>  x.Address);
+
+
+        }
     }
 }

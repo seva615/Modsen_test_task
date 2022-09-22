@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using Events.Data.DataInterfaces;
 
 namespace Events.Data.Entities
 {
-    public class OrganizerEntity : EntityAbstract
+    public class OrganizerEntity : BaseEntity
     {
-        public String OrganizerName { get; set; }
+        public string Name { get; set; }
         
-        public AddressEntity OrganaizerAddress { get; set; }
+        public AddressEntity Address { get; set; }
+
+        public IEnumerable<EventEntity> Events { get; set; } 
     }
 }

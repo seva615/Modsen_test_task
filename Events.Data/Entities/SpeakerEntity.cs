@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using Events.Data.DataInterfaces;
+
 
 namespace Events.Data.Entities
 {
-    public class SpeakerEntity : EntityAbstract
+    public class SpeakerEntity : BaseEntity
     {
-        public String SpeakerFirstName { get; set; }
+        public string FirstName { get; set; }
 
-        public String SpeakerLastName { get; set; }
+        public string LastName { get; set; }
+
+        public IEnumerable<SpeachEntity> Speaches { get; set; }
     }
 }

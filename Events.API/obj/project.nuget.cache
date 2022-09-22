@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "0GHCtC8yXDTqlaqYEzZXM83EY+NT47vbRgtXU4M51Xx+zpxRHHWnBTy8R19SniFuVr6gC5dWG6x54MiuW12QQA==",
+  "dgSpecHash": "szCXyPxVqJCbdVCW+l7KuugZzWlXxRTVhwAZiQCbUiZGr3p+KbG+RPRxapoSs663ReNQqoDw0RZCSYbCUaB5Uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yug77_bd0zewu\\RiderProjects\\Modsen_test_task\\Events.API\\Events.API.csproj",
+  "projectFilePath": "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.API\\Events.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

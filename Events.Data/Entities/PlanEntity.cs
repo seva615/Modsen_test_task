@@ -4,10 +4,15 @@ using Events.Data.DataInterfaces;
 
 namespace Events.Data.Entities
 {
-    public class PlanEntity : EntityAbstract
+    public class PlanEntity : BaseEntity
     {
-        public String PlanDescription { get; set; }
+        public string Title { get; set; }
         
-        public IEnumerable<SpeakerEntity> Speaker { get; set; }
+        public Guid EventId { get; set; }
+
+        public EventEntity Event { get; set; } 
+            
+        public IEnumerable<SpeachEntity> Speaches { get; set; }
+
     }
 }

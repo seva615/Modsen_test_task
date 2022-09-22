@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yug77_bd0zewu\\RiderProjects\\Modsen_test_task\\Events.Data\\Events.Data.csproj": {}
+    "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\Events.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yug77_bd0zewu\\RiderProjects\\Modsen_test_task\\Events.Data\\Events.Data.csproj": {
+    "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\Events.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yug77_bd0zewu\\RiderProjects\\Modsen_test_task\\Events.Data\\Events.Data.csproj",
+        "projectUniqueName": "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\Events.Data.csproj",
         "projectName": "Events.Data",
-        "projectPath": "C:\\Users\\yug77_bd0zewu\\RiderProjects\\Modsen_test_task\\Events.Data\\Events.Data.csproj",
+        "projectPath": "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\Events.Data.csproj",
         "packagesPath": "C:\\Users\\yug77_bd0zewu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yug77_bd0zewu\\RiderProjects\\Modsen_test_task\\Events.Data\\obj\\",
+        "outputPath": "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yug77_bd0zewu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,10 @@
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",

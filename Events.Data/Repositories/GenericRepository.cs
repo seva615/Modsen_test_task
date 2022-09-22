@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Events.Data.DataInterfaces;
+using Events.Data.Entities;
 
 namespace Events.Data.Repositories
 {
-    public abstract class EFGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : EntityAbstract
+    public abstract class EFGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly DataContext _context;
         protected Microsoft.EntityFrameworkCore.DbSet<TEntity> _dbSet;
