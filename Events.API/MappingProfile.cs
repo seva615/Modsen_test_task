@@ -33,6 +33,12 @@ namespace Modsen_test_task
             CreateMap<SpeechModel, SpeechEntity>();
             CreateMap<SpeechViewModel, SpeechModel>();
             CreateMap<SpeechModel, SpeechViewModel>();
+            CreateMap<CreateAddressViewModel, AddressModel>();
+            CreateMap<CreateEventViewModel, EventModel>();
+            CreateMap<CreateOrganizerViewModel, OrganizerModel>();
+            CreateMap<CreatePlanViewModel, PlanModel>();
+            CreateMap<CreateSpeakerViewModel, SpeakerModel>();
+            CreateMap<CreateSpeechViewModel, SpeechModel>();
         }
     }
 }

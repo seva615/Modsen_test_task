@@ -16,6 +16,8 @@ using Events.Data;
 using Events.Data.DataInterfaces;
 using Events.Data.Entities;
 using Events.Data.Repositories;
+using Events.Services.ServiceInterfaces;
+using Events.Services.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Modsen_test_task
@@ -41,6 +43,7 @@ namespace Modsen_test_task
             services.AddDbContext<DataContext>(options => 
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
+            services.AddSingleton(mapper);
             services.AddControllers();
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IEventRepository, EventRepository>();
@@ -48,9 +51,16 @@ namespace Modsen_test_task
             services.AddScoped<IPlanRepository, PlanRepository>();
             services.AddScoped<ISpeakerRepository, SpeakerRepository>();
             services.AddScoped<ISpeechRepository, SpeechRepository>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IOrganizerService, OrganizerService>();
+            services.AddScoped<IPlanService, PlanService>();
+            services.AddScoped<ISpeakerService, SpeakerService>();
+            services.AddScoped<ISpeechService, SpeechService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Events.API", Version = "v1"});
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
         }
 
@@ -63,13 +73,13 @@ namespace Modsen_test_task
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Events.API v1"));
             }
+            
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 var serviceProvider = serviceScope.ServiceProvider;
 
-                using (var context = serviceProvider.GetService<DbContext>())
+                using (var context = serviceProvider.GetService<DataContext>())
                 {
-                    context?.Database.EnsureCreated();
                     context?.Database.Migrate();
                 }
             }

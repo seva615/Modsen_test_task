@@ -1,0 +1,12 @@
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\bin\Debug\netcoreapp3.1\Events.Data.deps.json
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\bin\Debug\netcoreapp3.1\Events.Data.runtimeconfig.json
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\bin\Debug\netcoreapp3.1\Events.Data.runtimeconfig.dev.json
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\bin\Debug\netcoreapp3.1\Events.Data.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\bin\Debug\netcoreapp3.1\Events.Data.pdb
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.csprojAssemblyReference.cache
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.AssemblyInfoInputs.cache
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.AssemblyInfo.cs
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.csproj.CoreCompileInputs.cache
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.pdb
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Data\obj\Debug\netcoreapp3.1\Events.Data.genruntimeconfig.cache

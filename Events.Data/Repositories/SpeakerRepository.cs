@@ -2,7 +2,7 @@
 using Events.Data.DataInterfaces;
 using Events.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using Events.Data.Entities;
+
 
 
 namespace Events.Data.Repositories

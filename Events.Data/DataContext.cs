@@ -5,23 +5,21 @@ namespace Events.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) 
-        
-            : base(options) 
+        public DataContext(DbContextOptions<DataContext> options)
+            : base(options)
         {
-            
         }
-        
+
         public DbSet<AddressEntity> Addresses { get; set; }
-        
+
         public DbSet<EventEntity> Events { get; set; }
-        
+
         public DbSet<OrganizerEntity> Organizers { get; set; }
-        
+
         public DbSet<PlanEntity> Plans { get; set; }
-        
+
         public DbSet<SpeechEntity> Speeches { get; set; }
-        
+
         public DbSet<SpeakerEntity> Speakers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

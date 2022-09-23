@@ -1,0 +1,15 @@
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Services.deps.json
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Services.runtimeconfig.json
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Services.runtimeconfig.dev.json
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Services.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Services.pdb
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Data.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\bin\Debug\netcoreapp3.1\Events.Data.pdb
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.csprojAssemblyReference.cache
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.AssemblyInfoInputs.cache
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.AssemblyInfo.cs
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.csproj.CoreCompileInputs.cache
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.csproj.CopyComplete
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.pdb
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.Services\obj\Debug\netcoreapp3.1\Events.Services.genruntimeconfig.cache
