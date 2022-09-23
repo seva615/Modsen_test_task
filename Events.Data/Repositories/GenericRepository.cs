@@ -13,11 +13,11 @@ namespace Events.Data.Repositories
     public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly DataContext _context;
-        protected Microsoft.EntityFrameworkCore.DbSet<TEntity> _dbSet;
+        private readonly DbSet<TEntity> _dbSet;
         
         protected IQueryable<TEntity> CollectionWithInclude { get; set; }
 
-        public GenericRepository(DataContext context)
+        protected GenericRepository(DataContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();

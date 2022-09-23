@@ -8,6 +8,6 @@ namespace Events.Data.Entities
         
         public string LastName { get; set; }
         
-        public IEnumerable<SpeachEntity> Speaches { get; set; }
+        public IEnumerable<SpeechEntity> Speeches { get; set; }
     }
 }

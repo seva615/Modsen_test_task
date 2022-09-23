@@ -14,10 +14,10 @@ namespace Events.Data.Repositories
         _db = db;
         CollectionWithInclude = db.Events
             .Include(x => x.Address)
-            .Include(x => x.Organaizers)
+            .Include(x => x.Organizers)
                 .ThenInclude(x => x.Address)
             .Include(x => x.Plan)
-                .ThenInclude(x => x.Speaches)
+                .ThenInclude(x => x.Speeches)
                     .ThenInclude(x => x.Speaker);
 
 

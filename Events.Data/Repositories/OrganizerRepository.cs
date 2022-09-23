@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Events.Data.Repositories
 {
-    public class OrganaizerRepository : GenericRepository<OrganizerEntity>, IOrganaizerRepository
+    public class OrganizerRepository : GenericRepository<OrganizerEntity>, IOrganizerRepository
     {
         private readonly DataContext _db;
         
-        public OrganaizerRepository(DataContext db) : base(db)
+        public OrganizerRepository(DataContext db) : base(db)
         {
             _db = db;
             CollectionWithInclude = db.Organizers

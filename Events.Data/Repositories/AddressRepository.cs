@@ -13,7 +13,7 @@ namespace Events.Data.Repositories
             _db = db;
             CollectionWithInclude = db.Addresses
                 .Include(x=>  x.Event)
-                .Include(x=> x.Organaizer);
+                .Include(x=> x.Organizer);
 
 
         }

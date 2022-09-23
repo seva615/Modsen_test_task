@@ -12,7 +12,7 @@ namespace Events.Data.Repositories
         {
             _db = db;
             CollectionWithInclude = db.Plans
-                .Include(x => x.Speaches)
+                .Include(x => x.Speeches)
                 .ThenInclude(x => x.Speaker);
 
         }

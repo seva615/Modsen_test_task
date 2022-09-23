@@ -18,7 +18,7 @@ namespace Events.Data.Entities
         
         public AddressEntity Address { get; set; }
 
-        public IEnumerable<OrganizerEntity> Organaizers { get; set; } 
+        public IEnumerable<OrganizerEntity> Organizers { get; set; } 
 
     }
 }

@@ -20,18 +20,18 @@ namespace Events.Data
         
         public DbSet<PlanEntity> Plans { get; set; }
         
-        public DbSet<SpeachEntity> Speaches { get; set; }
+        public DbSet<SpeechEntity> Speeches { get; set; }
         
         public DbSet<SpeakerEntity> Speakers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-             modelBuilder.Entity<EventEntity>().HasOne(e => e.Address).WithOne(e => e.Event);
-            modelBuilder.Entity<EventEntity>().HasMany(e => e.Organaizers).WithMany(e => e.Events);
+            modelBuilder.Entity<EventEntity>().HasOne(e => e.Address).WithOne(e => e.Event);
+            modelBuilder.Entity<EventEntity>().HasMany(e => e.Organizers).WithMany(e => e.Events);
             modelBuilder.Entity<EventEntity>().HasOne(e => e.Plan).WithOne(e => e.Event);
-            modelBuilder.Entity<OrganizerEntity>().HasOne(e => e.Address).WithOne(e => e.Organaizer);
-            modelBuilder.Entity<PlanEntity>().HasMany(e => e.Speaches).WithOne(e => e.Plan);
-            modelBuilder.Entity<SpeachEntity>().HasOne(e => e.Speaker).WithMany(e => e.Speaches);
+            modelBuilder.Entity<OrganizerEntity>().HasOne(e => e.Address).WithOne(e => e.Organizer);
+            modelBuilder.Entity<PlanEntity>().HasMany(e => e.Speeches).WithOne(e => e.Plan);
+            modelBuilder.Entity<SpeechEntity>().HasOne(e => e.Speaker).WithMany(e => e.Speeches);
         }
     }
 }

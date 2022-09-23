@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Events.Data.Repositories
 {
-    public class SpeachRepository : GenericRepository<SpeachEntity>, ISpeachRepository
+    public class SpeechRepository : GenericRepository<SpeechEntity>, ISpeechRepository
     {
         private readonly DataContext _db;
         
-        public SpeachRepository(DataContext db) : base(db)
+        public SpeechRepository(DataContext db) : base(db)
         {
             _db = db;
-            CollectionWithInclude = db.Speaches
+            CollectionWithInclude = db.Speeches
                 .Include(x => x.Speaker);
         }
     }

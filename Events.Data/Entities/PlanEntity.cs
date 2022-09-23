@@ -12,7 +12,7 @@ namespace Events.Data.Entities
 
         public EventEntity Event { get; set; } 
             
-        public IEnumerable<SpeachEntity> Speaches { get; set; }
+        public IEnumerable<SpeechEntity> Speeches { get; set; }
 
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
-using Events.Data.DataInterfaces;
+using Events.Data.Entities;
 
-namespace Events.Data.Entities
+namespace Modsen_test_task.ViewModels
 {
-    public class AddressEntity : BaseEntity
+    public class AddressViewModel
     {
+        public Guid Id { get; set; }
+        
         public string Country { get; set; }
         
         public string City { get; set; }
@@ -17,8 +19,8 @@ namespace Events.Data.Entities
         
         public Guid? EventId { get; set; }
         
-        public OrganizerEntity Organizer { get; set; }
+        public OrganizerViewModel Organizer { get; set; }
         
-        public EventEntity Event { get; set; }
+        public EventViewModel Event { get; set; }
     }
 }
