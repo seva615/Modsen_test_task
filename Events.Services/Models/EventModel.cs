@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace Events.Data.Entities
+namespace Events.Services.Models
 {
-    public class EventEntity : BaseEntity
+    public class EventModel : BaseModel
     {
         public string Name { get; set; }
         
@@ -14,11 +14,11 @@ namespace Events.Data.Entities
 
         public DateTimeOffset DateTime { get; set; }
         
-        public PlanEntity Plan { get; set; }
+        public PlanModel Plan { get; set; }
         
-        public AddressEntity Address { get; set; }
+        public AddressModel Address { get; set; }
 
-        public IEnumerable<OrganizerEntity> Organizers { get; set; } 
+        public IEnumerable<OrganizerModel> Organizers { get; set; } 
 
     }
 }

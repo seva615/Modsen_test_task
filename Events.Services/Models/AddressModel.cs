@@ -1,9 +1,9 @@
 ﻿using System;
 
 
-namespace Events.Data.Entities
+namespace Events.Services.Models
 {
-    public class AddressEntity : BaseEntity
+    public class AddressModel : BaseModel
     {
         public string Country { get; set; }
         
@@ -17,8 +17,8 @@ namespace Events.Data.Entities
         
         public Guid? EventId { get; set; }
         
-        public OrganizerEntity Organizer { get; set; }
+        public OrganizerModel Organizer { get; set; }
         
-        public EventEntity Event { get; set; }
+        public EventModel Event { get; set; }
     }
 }

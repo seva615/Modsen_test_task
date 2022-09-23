@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Events.Data.DataInterfaces;
+
 
 namespace Events.Data.Entities
 {

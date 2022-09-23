@@ -1432,6 +1432,23 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Events.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "11.0.1",
+          "EntityFramework": "6.4.4",
+          "FluentValidation": "11.2.2",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Events.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Events.Data.dll": {}
+        }
       }
     }
   },
@@ -5137,12 +5154,18 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Events.Data/1.0.0": {
+      "type": "project",
+      "path": "../Events.Data/Events.Data.csproj",
+      "msbuildProject": "../Events.Data/Events.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper >= 11.0.1",
       "EntityFramework >= 6.4.4",
+      "Events.Data >= 1.0.0",
       "FluentValidation >= 11.2.2",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
@@ -5175,7 +5198,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\Events.Data.csproj": {
+              "projectPath": "C:\\Users\\yug77_bd0zewu\\Documents\\GitHub\\Modsen_test_task\\Events.Data\\Events.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

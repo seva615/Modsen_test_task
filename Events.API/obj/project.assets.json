@@ -1530,6 +1530,7 @@
         "dependencies": {
           "AutoMapper": "11.0.1",
           "EntityFramework": "6.4.4",
+          "Events.Data": "1.0.0",
           "FluentValidation": "11.2.2",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
