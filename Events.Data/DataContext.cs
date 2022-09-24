@@ -25,9 +25,9 @@ namespace Events.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<EventEntity>().HasOne(e => e.Address).WithOne(e => e.Event);
-            modelBuilder.Entity<EventEntity>().HasMany(e => e.Organizers).WithMany(e => e.Events);
             modelBuilder.Entity<EventEntity>().HasOne(e => e.Plan).WithOne(e => e.Event);
-            modelBuilder.Entity<OrganizerEntity>().HasOne(e => e.Address).WithOne(e => e.Organizer);
+            modelBuilder.Entity<OrganizerEntity>().HasMany(e => e.Events).WithOne(e => e.Organizers)
+                .HasForeignKey(e => e.OrganizerId);
             modelBuilder.Entity<PlanEntity>().HasMany(e => e.Speeches).WithOne(e => e.Plan);
             modelBuilder.Entity<SpeechEntity>().HasOne(e => e.Speaker).WithMany(e => e.Speeches);
         }

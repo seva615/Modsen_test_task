@@ -32,6 +32,8 @@ namespace Events.Data.Repositories
             return await CollectionWithInclude.FirstOrDefaultAsync(entity => id == entity.Id);
         }
 
+        
+
         public async Task Add(TEntity item)
         {
             await _dbSet.AddAsync(item);

@@ -3,5 +3,9 @@
     public class CreateOrganizerViewModel
     {
         public string Name { get; set; }
+        
+        public string Password { get; set; }
+
     }
+    
 }

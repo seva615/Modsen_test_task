@@ -110,3 +110,12 @@ C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\obj\Debug\ne
 C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\obj\Debug\netcoreapp3.1\Events.API.genruntimeconfig.cache
 C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\yug77_bd0zewu\Documents\GitHub\Modsen_test_task\Events.API\bin\Debug\netcoreapp3.1\System.Text.Json.dll

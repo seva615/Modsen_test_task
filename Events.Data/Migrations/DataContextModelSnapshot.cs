@@ -19,21 +19,6 @@ namespace Events.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("EventEntityOrganizerEntity", b =>
-                {
-                    b.Property<Guid>("EventsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("OrganizersId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("EventsId", "OrganizersId");
-
-                    b.HasIndex("OrganizersId");
-
-                    b.ToTable("EventEntityOrganizerEntity");
-                });
-
             modelBuilder.Entity("Events.Data.Entities.AddressEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -84,7 +69,12 @@ namespace Events.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
+                    b.Property<Guid>("OrganizerId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("OrganizerId");
 
                     b.ToTable("Events");
                 });
@@ -96,6 +86,12 @@ namespace Events.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Role")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -170,21 +166,6 @@ namespace Events.Data.Migrations
                     b.ToTable("Speeches");
                 });
 
-            modelBuilder.Entity("EventEntityOrganizerEntity", b =>
-                {
-                    b.HasOne("Events.Data.Entities.EventEntity", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Events.Data.Entities.OrganizerEntity", null)
-                        .WithMany()
-                        .HasForeignKey("OrganizersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Events.Data.Entities.AddressEntity", b =>
                 {
                     b.HasOne("Events.Data.Entities.EventEntity", "Event")
@@ -198,6 +179,17 @@ namespace Events.Data.Migrations
                     b.Navigation("Event");
 
                     b.Navigation("Organizer");
+                });
+
+            modelBuilder.Entity("Events.Data.Entities.EventEntity", b =>
+                {
+                    b.HasOne("Events.Data.Entities.OrganizerEntity", "Organizers")
+                        .WithMany("Events")
+                        .HasForeignKey("OrganizerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Organizers");
                 });
 
             modelBuilder.Entity("Events.Data.Entities.PlanEntity", b =>
@@ -238,6 +230,8 @@ namespace Events.Data.Migrations
             modelBuilder.Entity("Events.Data.Entities.OrganizerEntity", b =>
                 {
                     b.Navigation("Address");
+
+                    b.Navigation("Events");
                 });
 
             modelBuilder.Entity("Events.Data.Entities.PlanEntity", b =>

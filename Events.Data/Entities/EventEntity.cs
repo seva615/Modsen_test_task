@@ -17,8 +17,10 @@ namespace Events.Data.Entities
         public PlanEntity Plan { get; set; }
         
         public AddressEntity Address { get; set; }
+        
+        public Guid OrganizerId { get; set; }
 
-        public IEnumerable<OrganizerEntity> Organizers { get; set; } 
+        public OrganizerEntity Organizers { get; set; } 
 
     }
 }

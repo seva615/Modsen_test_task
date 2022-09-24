@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Events.Services.Models;
 using Events.Services.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Modsen_test_task.ViewModels;
 
@@ -38,14 +39,6 @@ namespace Modsen_test_task.Controllers
             return organizerViewModel;
         }
 
-        [HttpPost]
-        [Route("addOrganizer")]
-        public async Task AddOrganizer(CreateOrganizerViewModel organizer)
-        {
-            var organizerModel = _mapper.Map<CreateOrganizerViewModel, OrganizerModel>(organizer);
-            await _organizerService.AddOrganizer(organizerModel);
-        }
-
         [HttpPut]
         [Route("editOrganizer")]
         public async Task EditOrganizer(OrganizerViewModel organizer)
@@ -56,6 +49,7 @@ namespace Modsen_test_task.Controllers
 
         [HttpDelete]
         [Route("deleteOrganizer")]
+        
         public async Task DeleteOrganizer(Guid id)
         {
             await _organizerService.DeleteOrganizer(id);

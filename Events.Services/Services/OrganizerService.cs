@@ -24,11 +24,7 @@ namespace Events.Services.Services
             await _organizerRepository.Delete(id);
         }
 
-        public async Task AddOrganizer(OrganizerModel organizer)
-        {
-            var OrganizerEntity = _mapper.Map<OrganizerModel, OrganizerEntity>(organizer);
-            await _organizerRepository.Add(OrganizerEntity);
-        }
+        
 
         public async Task<OrganizerModel> GetOrganizer(Guid id)
         {

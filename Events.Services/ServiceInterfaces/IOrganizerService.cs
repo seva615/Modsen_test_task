@@ -8,8 +8,6 @@ namespace Events.Services.ServiceInterfaces
     public interface IOrganizerService
     {
         public Task DeleteOrganizer(Guid id);
-        
-        public Task AddOrganizer(OrganizerModel organizer);
 
         public Task<OrganizerModel> GetOrganizer(Guid id);
 

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Events.Services.Models;
 using Events.Services.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Modsen_test_task.ViewModels;
 
@@ -21,7 +22,9 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("getPlans")]
+        
         public async Task<IEnumerable<PlanViewModel>> GetAllPlans()
         {
             var planModels = await _planService.GetAllPlans();

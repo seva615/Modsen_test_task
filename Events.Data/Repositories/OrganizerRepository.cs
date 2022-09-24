@@ -1,4 +1,6 @@
-﻿using Events.Data.DataInterfaces;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Events.Data.DataInterfaces;
 using Events.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,11 @@ namespace Events.Data.Repositories
                 .Include(x=> x.Events);
 
 
+        }
+        
+        public  OrganizerEntity GetByName(string name)
+        {
+            return  CollectionWithInclude.FirstOrDefault(entity => entity.Name == name);
         }
         
     }
