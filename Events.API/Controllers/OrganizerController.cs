@@ -29,6 +29,16 @@ namespace Modsen_test_task.Controllers
             var organizerViewModels = _mapper.Map<IEnumerable<OrganizerViewModel>>(organizerModels);
             return organizerViewModels;
         }
+        
+        [HttpPut]
+        [Authorize(Roles = Role.Admin)]
+        [Route("editOrganizerRole")]
+        public async Task EditOrganizerRole(EditOrganizerRole organizer)
+        {
+            var organizerModel = _mapper.Map<EditOrganizerRole, OrganizerModel>(organizer);
+            await _organizerService.EditOrganizerRole(organizerModel);
+        }
+        
 
         [HttpGet]
         [Route("getOrganizer")]
@@ -39,15 +49,8 @@ namespace Modsen_test_task.Controllers
             return organizerViewModel;
         }
 
-        [HttpPut]
-        [Route("editOrganizer")]
-        public async Task EditOrganizer(OrganizerViewModel organizer)
-        {
-            var organizerModel = _mapper.Map<OrganizerViewModel, OrganizerModel>(organizer);
-            await _organizerService.EditOrganizer(organizerModel);
-        }
-
         [HttpDelete]
+        [Authorize(Roles = Role.Admin)]
         [Route("deleteOrganizer")]
         
         public async Task DeleteOrganizer(Guid id)

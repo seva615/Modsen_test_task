@@ -3,15 +3,17 @@ using System;
 using Events.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Events.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220924214310_third")]
+    partial class third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,6 +36,9 @@ namespace Events.Data.Migrations
                     b.Property<Guid?>("EventId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("OrganizerId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Postcode")
                         .HasColumnType("text");
 
@@ -43,6 +48,9 @@ namespace Events.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EventId")
+                        .IsUnique();
+
+                    b.HasIndex("OrganizerId")
                         .IsUnique();
 
                     b.ToTable("Addresses");
@@ -148,7 +156,7 @@ namespace Events.Data.Migrations
                     b.Property<Guid>("PlanId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("SpeakerId")
+                    b.Property<Guid?>("SpeakerId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -164,21 +172,26 @@ namespace Events.Data.Migrations
                 {
                     b.HasOne("Events.Data.Entities.EventEntity", "Event")
                         .WithOne("Address")
-                        .HasForeignKey("Events.Data.Entities.AddressEntity", "EventId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .HasForeignKey("Events.Data.Entities.AddressEntity", "EventId");
+
+                    b.HasOne("Events.Data.Entities.OrganizerEntity", "Organizer")
+                        .WithOne("Address")
+                        .HasForeignKey("Events.Data.Entities.AddressEntity", "OrganizerId");
 
                     b.Navigation("Event");
+
+                    b.Navigation("Organizer");
                 });
 
             modelBuilder.Entity("Events.Data.Entities.EventEntity", b =>
                 {
-                    b.HasOne("Events.Data.Entities.OrganizerEntity", "Organizer")
+                    b.HasOne("Events.Data.Entities.OrganizerEntity", "Organizers")
                         .WithMany("Events")
                         .HasForeignKey("OrganizerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Organizer");
+                    b.Navigation("Organizers");
                 });
 
             modelBuilder.Entity("Events.Data.Entities.PlanEntity", b =>
@@ -202,9 +215,7 @@ namespace Events.Data.Migrations
 
                     b.HasOne("Events.Data.Entities.SpeakerEntity", "Speaker")
                         .WithMany("Speeches")
-                        .HasForeignKey("SpeakerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SpeakerId");
 
                     b.Navigation("Plan");
 
@@ -220,6 +231,8 @@ namespace Events.Data.Migrations
 
             modelBuilder.Entity("Events.Data.Entities.OrganizerEntity", b =>
                 {
+                    b.Navigation("Address");
+
                     b.Navigation("Events");
                 });
 

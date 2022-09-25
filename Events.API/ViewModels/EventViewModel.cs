@@ -14,11 +14,13 @@ namespace Modsen_test_task.ViewModels
 
         public DateTimeOffset DateTime { get; set; }
         
+        //public Guid OrganizerId { get; set; }
+        
         public PlanViewModel Plan { get; set; }
         
         public AddressViewModel Address { get; set; }
 
-        public IEnumerable<OrganizerViewModel> Organizers { get; set; } 
+        //public OrganizerViewModel Organizer { get; set; } 
 
     }
 }

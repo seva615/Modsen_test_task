@@ -14,13 +14,11 @@ namespace Modsen_test_task.ViewModels
         public string Street { get; set; }
         
         public string Postcode { get; set; }
-        
-        public Guid? OrganizerId { get; set; }
-        
+
         public Guid? EventId { get; set; }
         
-        public OrganizerViewModel Organizer { get; set; }
+        //public OrganizerViewModel Organizer { get; set; }
         
-        public EventViewModel Event { get; set; }
+        //public EventViewModel Event { get; set; }
     }
 }

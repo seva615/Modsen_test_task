@@ -26,7 +26,6 @@ namespace Modsen_test_task.Controllers
         [Route("Register")]
         public async Task Register(CreateOrganizerViewModel organizer)
         {
-            //organizer.Role = Role.User;
             OrganizerModel organizerModel = _mapper.Map<CreateOrganizerViewModel, OrganizerModel>(organizer);
             await _accountService.CreateAccount(organizerModel);
         }

@@ -40,6 +40,7 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("addSpeaker")]
         public async Task AddSpeaker(CreateSpeakerViewModel speaker)
         {
@@ -48,14 +49,16 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("editSpeaker")]
-        public async Task EditSpeaker(SpeakerViewModel speaker)
+        public async Task EditSpeaker(EditSpeakerViewModel speaker)
         {
-            var speakerModel = _mapper.Map<SpeakerViewModel, SpeakerModel>(speaker);
+            var speakerModel = _mapper.Map<EditSpeakerViewModel, SpeakerModel>(speaker);
             await _speakerService.EditSpeaker(speakerModel);
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("deleteSpeaker")]
         public async Task DeleteSpeaker(Guid id)
         {

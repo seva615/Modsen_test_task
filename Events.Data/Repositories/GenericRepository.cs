@@ -31,7 +31,11 @@ namespace Events.Data.Repositories
         {
             return await CollectionWithInclude.FirstOrDefaultAsync(entity => id == entity.Id);
         }
-
+        
+        public TEntity GetEntityById(Guid id)
+        {
+            return CollectionWithInclude.FirstOrDefault(entity => id == entity.Id);
+        }
         
 
         public async Task Add(TEntity item)
@@ -41,9 +45,10 @@ namespace Events.Data.Repositories
         }
 
         public async Task Edit(TEntity item)
-        { 
+        {
             _dbSet.Attach(item);
-            _context.Entry(item).State = EntityState.Modified;
+            _context.Entry(item).State = (Microsoft.EntityFrameworkCore.EntityState)EntityState.Modified;
+            await _context.SaveChangesAsync();
             await _context.SaveChangesAsync();
         }
 

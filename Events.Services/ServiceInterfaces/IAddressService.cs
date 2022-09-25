@@ -16,5 +16,7 @@ namespace Events.Services.ServiceInterfaces
         public Task EditAddress(AddressModel address);
 
         public Task<IEnumerable<AddressModel>> GetAllAddresses();
+
+        public Task EditAddressEvent(AddressModel address);
     }
 }

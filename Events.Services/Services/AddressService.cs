@@ -26,28 +26,36 @@ namespace Events.Services.Services
 
         public async Task AddAddress(AddressModel address)
         {
-            var AddressEntity = _mapper.Map<AddressModel, AddressEntity>(address);
-            await _addressRepository.Add(AddressEntity);
+            var addressEntity = _mapper.Map<AddressModel, AddressEntity>(address);
+            await _addressRepository.Add(addressEntity);
         }
 
         public async Task<AddressModel> GetAddress(Guid id)
         {
-            var AddressEntity = await _addressRepository.GetById(id);
-            var AddressModel = _mapper.Map<AddressEntity, AddressModel>(AddressEntity);
-            return AddressModel;
+            var addressEntity = await _addressRepository.GetById(id);
+            var addressModel = _mapper.Map<AddressEntity, AddressModel>(addressEntity);
+            return addressModel;
         }
 
         public async Task EditAddress(AddressModel address)
         {
-            var AddressEntity = _mapper.Map<AddressModel, AddressEntity>(address);
-            await _addressRepository.Edit(AddressEntity);
+            
+            var addressEntity = _mapper.Map<AddressModel, AddressEntity>(address);
+            await _addressRepository.Edit(addressEntity);
+        }
+        
+        public async Task EditAddressEvent(AddressModel address)
+        {
+            var entity = _addressRepository.GetEntityById(address.Id);
+            entity.EventId = address.EventId;
+            await _addressRepository.Edit(entity);
         }
 
         public async Task<IEnumerable<AddressModel>> GetAllAddresses()
         {
-            var AddressEntities = await _addressRepository.GetAll();
-            var AddressModels = _mapper.Map<IEnumerable<AddressModel>>(AddressEntities);
-            return AddressModels;
+            var addressEntities = await _addressRepository.GetAll();
+            var addressModels = _mapper.Map<IEnumerable<AddressModel>>(addressEntities);
+            return addressModels;
         }
     }
 }

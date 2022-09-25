@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Events.Data.Entities
@@ -13,8 +14,12 @@ namespace Events.Data.Entities
         
         public Guid PlanId { get; set; }
         
+        public Guid SpeakerId { get; set; }
+        
+        [ForeignKey(nameof(PlanId))]
         public PlanEntity Plan { get; set; }
         
+        [ForeignKey(nameof(SpeakerId))]
         public SpeakerEntity Speaker { get; set; }
     }
 }

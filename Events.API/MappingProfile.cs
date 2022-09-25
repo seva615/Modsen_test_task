@@ -40,6 +40,20 @@ namespace Modsen_test_task
             CreateMap<CreateSpeakerViewModel, SpeakerModel>();
             CreateMap<CreateSpeechViewModel, SpeechModel>();
             CreateMap<LoginViewModel, OrganizerModel>();
+            CreateMap<EditAddressViewModel, AddressModel>();
+            CreateMap<AddressModel, EditAddressViewModel>();
+            CreateMap<EditEventViewModel, EventModel>();
+            CreateMap<EventModel, EditEventViewModel>();
+            CreateMap<EditOrganizerRole, OrganizerModel>();
+            CreateMap<OrganizerModel, EditOrganizerRole>();
+            CreateMap<EditPlanViewModel, PlanModel>();
+            CreateMap<PlanModel, EditPlanViewModel>();
+            CreateMap<EditSpeakerViewModel, SpeakerModel>();
+            CreateMap<SpeakerModel, EditSpeakerViewModel>();
+            CreateMap<EditSpeechViewModel, SpeechModel>();
+            CreateMap<SpeechModel, EditSpeechViewModel>();
+            CreateMap<EditAddressEvent, AddressModel>();
+            CreateMap<AddressModel, EditAddressEvent>();
         }
     }
 }

@@ -14,5 +14,7 @@ namespace Events.Services.ServiceInterfaces
         public Task<IEnumerable<OrganizerModel>> GetAllOrganizers();
 
         public Task EditOrganizer(OrganizerModel organizer);
+        
+        public Task EditOrganizerRole(OrganizerModel organizer);
     }
 }

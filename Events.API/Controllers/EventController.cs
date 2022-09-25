@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Events.Services.Models;
 using Events.Services.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Modsen_test_task.ViewModels;
 
@@ -33,12 +34,21 @@ namespace Modsen_test_task.Controllers
         [Route("getEvent")]
         public async Task<EventViewModel> GetEvent(Guid id)
         {
-            var eventModel = await _eventService.GetEvent(id);
+            EventModel eventModel;
+            try
+            {
+                 eventModel = await _eventService.GetEvent(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Event not found");
+            }
             var eventViewModel = _mapper.Map<EventModel, EventViewModel>(eventModel);
             return eventViewModel;
         }
 
         [HttpPost]
+        [Authorize]
         [Route("addEvent")]
         public async Task AddEvent(CreateEventViewModel eventViewModel)
         {
@@ -47,18 +57,26 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("editEvent")]
-        public async Task EditEvent(EventViewModel eventViewModel)
+        public async Task EditEvent(EditEventViewModel eventViewModel)
         {
-            var eventModel = _mapper.Map<EventViewModel, EventModel>(eventViewModel);
+            var eventModel = _mapper.Map<EditEventViewModel, EventModel>(eventViewModel);
             await _eventService.EditEvent(eventModel);
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("deleteEvent")]
         public async Task DeleteEvent(Guid id)
-        {
-            await _eventService.DeleteEvent(id);
+        {try
+            {
+                await _eventService.DeleteEvent(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Event not found");
+            }
         }
     }
 }

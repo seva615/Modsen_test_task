@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Events.Services.Models
@@ -18,7 +19,7 @@ namespace Events.Services.Models
         public Guid? OrganizerId { get; set; }
         
         public Guid? EventId { get; set; }
-        
+
         public OrganizerModel Organizer { get; set; }
         
         public EventModel Event { get; set; }

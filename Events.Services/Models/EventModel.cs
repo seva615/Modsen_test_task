@@ -14,11 +14,13 @@ namespace Events.Services.Models
 
         public DateTimeOffset DateTime { get; set; }
         
+        public Guid OrganizerId { get; set; }
+        
         public PlanModel Plan { get; set; }
         
         public AddressModel Address { get; set; }
 
-        public IEnumerable<OrganizerModel> Organizers { get; set; } 
+        public OrganizerModel Organizer { get; set; } 
 
     }
 }

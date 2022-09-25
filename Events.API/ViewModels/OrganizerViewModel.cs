@@ -12,8 +12,6 @@ namespace Modsen_test_task.ViewModels
         public string Password { get; set; }
         
         public string Role { get; set; }
-        
-        public AddressViewModel Address { get; set; }
 
         public IEnumerable<EventViewModel> Events { get; set; } 
     }

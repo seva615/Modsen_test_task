@@ -11,5 +11,7 @@ namespace Modsen_test_task.ViewModels
         public DateTimeOffset DateTime { get; set; }
         
         public Guid PlanId { get; set; }
+        
+        public Guid SpeakerId { get; set; }
     }
 }

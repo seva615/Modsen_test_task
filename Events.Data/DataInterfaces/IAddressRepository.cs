@@ -1,4 +1,5 @@
-﻿using Events.Data.Entities;
+﻿using System;
+using Events.Data.Entities;
 
 namespace Events.Data.DataInterfaces
 {

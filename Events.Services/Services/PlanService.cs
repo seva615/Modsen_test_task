@@ -32,10 +32,10 @@ namespace Events.Services.Services
 
         public async Task AddPlan(PlanModel plan)
         {
-            if (await _eventRepository.GetById(plan.EventId) != null)
+            if ( await _eventRepository.GetById(plan.EventId) != null)
             {
-                var PlanEntity = _mapper.Map<PlanModel, PlanEntity>(plan);
-                await _planRepository.Add(PlanEntity);
+                var planEntity = _mapper.Map<PlanModel, PlanEntity>(plan);
+                await _planRepository.Add(planEntity);
             }
             else
             {
@@ -45,22 +45,22 @@ namespace Events.Services.Services
 
         public async Task<PlanModel> GetPlan(Guid id)
         {
-            var PlanEntity = await _planRepository.GetById(id);
-            var PlanModel = _mapper.Map<PlanEntity, PlanModel>(PlanEntity);
-            return PlanModel;
+            var planEntity = await _planRepository.GetById(id);
+            var planModel = _mapper.Map<PlanEntity, PlanModel>(planEntity);
+            return planModel;
         }
 
         public async Task EditPlan(PlanModel plan)
         {
-            var PlanEntity = _mapper.Map<PlanModel, PlanEntity>(plan);
-            await _planRepository.Edit(PlanEntity);
+            var planEntity = _mapper.Map<PlanModel, PlanEntity>(plan);
+            await _planRepository.Edit(planEntity);
         }
 
         public async Task<IEnumerable<PlanModel>> GetAllPlans()
         {
-            var PlanEntities = await _planRepository.GetAll();
-            var PlanModels = _mapper.Map<IEnumerable<PlanModel>>(PlanEntities);
-            return PlanModels;
+            var planEntities = await _planRepository.GetAll();
+            var planModels = _mapper.Map<IEnumerable<PlanModel>>(planEntities);
+            return planModels;
         }
     }
 }

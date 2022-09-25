@@ -1,11 +1,11 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
-
-namespace Events.Data.Entities
+namespace Modsen_test_task.ViewModels
 {
-    public class AddressEntity : BaseEntity
+    public class EditAddressViewModel
     {
+        public Guid Id { get; set; }
+        
         public string Country { get; set; }
         
         public string City { get; set; }
@@ -13,10 +13,9 @@ namespace Events.Data.Entities
         public string Street { get; set; }
         
         public string Postcode { get; set; }
-
+        
+        public Guid? OrganizerId { get; set; }
+        
         public Guid? EventId { get; set; }
-
-        [ForeignKey(nameof(EventId))]
-        public EventEntity Event { get; set; }
     }
 }

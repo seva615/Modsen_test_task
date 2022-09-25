@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Events.Services.Models;
 using Events.Services.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Modsen_test_task.ViewModels;
 
@@ -39,6 +40,7 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("addSpeech")]
         public async Task AddSpeech(CreateSpeechViewModel speech)
         {
@@ -47,14 +49,16 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("editSpeech")]
-        public async Task EditSpeech(SpeechViewModel speech)
+        public async Task EditSpeech(EditSpeechViewModel speech)
         {
-            var speechModel = _mapper.Map<SpeechViewModel, SpeechModel>(speech);
+            var speechModel = _mapper.Map<EditSpeechViewModel, SpeechModel>(speech);
             await _speechService.EditSpeech(speechModel);
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("deleteSpeech")]
         public async Task DeleteSpeech(Guid id)
         {

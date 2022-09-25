@@ -11,6 +11,7 @@ namespace Events.Services.Models
         
         public DateTimeOffset DateTime { get; set; }
         
+        public Guid SpeakerId { get; set; }
         public Guid PlanId { get; set; }
         
         public PlanModel Plan { get; set; }

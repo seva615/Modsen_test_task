@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using Events.Data.DataInterfaces;
 using Events.Data.Entities;
@@ -29,10 +31,11 @@ namespace Events.Services.Services
                 throw new AccountCreatingException("This name already exists");
             }
 
-            organizer.Role = Role.User;
+            IEnumerable<OrganizerEntity> usersList = await _organizerRepository.GetAll();
+            
+            organizer.Role = !usersList.Any() ? Role.Admin : Role.User;
             
             var organizerEntity = _mapper.Map<OrganizerModel, OrganizerEntity>(organizer);
-
             organizerEntity.Password = _cryptographyService.HashPassword(organizerEntity.Password);
 
             await _organizerRepository.Add(organizerEntity);

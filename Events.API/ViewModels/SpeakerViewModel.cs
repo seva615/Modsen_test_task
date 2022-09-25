@@ -12,6 +12,6 @@ namespace Modsen_test_task.ViewModels
         
         public string LastName { get; set; }
         
-        public IEnumerable<SpeechViewModel> Speeches { get; set; }
+        //public IEnumerable<SpeechViewModel> Speeches { get; set; }
     }
 }

@@ -22,7 +22,6 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         [Route("getPlans")]
         
         public async Task<IEnumerable<PlanViewModel>> GetAllPlans()
@@ -42,6 +41,7 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("addPlan")]
         public async Task AddPlan(CreatePlanViewModel plan)
         {
@@ -50,14 +50,16 @@ namespace Modsen_test_task.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("editPlan")]
-        public async Task EditPlan(PlanViewModel plan)
+        public async Task EditPlan(EditPlanViewModel plan)
         {
-            var planModel = _mapper.Map<PlanViewModel, PlanModel>(plan);
+            var planModel = _mapper.Map<EditPlanViewModel, PlanModel>(plan);
             await _planService.EditPlan(planModel);
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("deletePlan")]
         public async Task DeletePlan(Guid id)
         {

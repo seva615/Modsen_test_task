@@ -11,9 +11,8 @@ namespace Events.Data.Repositories
         public AddressRepository(DataContext db) : base(db)
         {
             _db = db;
-            CollectionWithInclude = db.Addresses
-                .Include(x=>  x.Event)
-                .Include(x=> x.Organizer);
+            CollectionWithInclude = db.Addresses;
+
 
 
         }

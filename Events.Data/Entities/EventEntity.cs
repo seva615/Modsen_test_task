@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 
@@ -20,7 +21,8 @@ namespace Events.Data.Entities
         
         public Guid OrganizerId { get; set; }
 
-        public OrganizerEntity Organizers { get; set; } 
+        [ForeignKey(nameof(OrganizerId))]
+        public OrganizerEntity Organizer { get; set; } 
 
     }
 }

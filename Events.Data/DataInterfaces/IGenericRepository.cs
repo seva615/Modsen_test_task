@@ -16,5 +16,7 @@ namespace Events.Data.DataInterfaces
         Task Delete(Guid id);
 
         Task Edit(TEntity item);
+
+        public TEntity GetEntityById(Guid id);
     }
 }

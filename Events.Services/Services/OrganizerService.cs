@@ -11,7 +11,7 @@ namespace Events.Services.Services
 {
     public class OrganizerService : IOrganizerService
     {
-        private readonly IOrganizerRepository _organizerRepository;        
+        private readonly IOrganizerRepository _organizerRepository;
         private readonly IMapper _mapper;
 
         public OrganizerService(IOrganizerRepository organizerRepository, IMapper mapper)
@@ -19,31 +19,39 @@ namespace Events.Services.Services
             _organizerRepository = organizerRepository;
             _mapper = mapper;
         }
+
         public async Task DeleteOrganizer(Guid id)
         {
             await _organizerRepository.Delete(id);
         }
 
-        
 
         public async Task<OrganizerModel> GetOrganizer(Guid id)
         {
-            var OrganizerEntity = await _organizerRepository.GetById(id);
-            var OrganizerModel = _mapper.Map<OrganizerEntity, OrganizerModel>(OrganizerEntity);
-            return OrganizerModel;
+            var organizerEntity = await _organizerRepository.GetById(id);
+            var organizerModel = _mapper.Map<OrganizerEntity, OrganizerModel>(organizerEntity);
+            return organizerModel;
         }
 
         public async Task EditOrganizer(OrganizerModel organizer)
         {
-            var OrganizerEntity = _mapper.Map<OrganizerModel, OrganizerEntity>(organizer);
-            await _organizerRepository.Edit(OrganizerEntity);
+            var organizerEntity = _mapper.Map<OrganizerModel, OrganizerEntity>(organizer);
+            await _organizerRepository.Edit(organizerEntity);
+        }
+
+        public async Task EditOrganizerRole( OrganizerModel organizer)
+        {
+            var entity = _organizerRepository.GetEntityById(organizer.Id);
+            entity.Role = organizer.Role;
+            var organizerEntity = _mapper.Map<OrganizerModel, OrganizerEntity>(organizer);
+            await _organizerRepository.Edit(entity);
         }
 
         public async Task<IEnumerable<OrganizerModel>> GetAllOrganizers()
         {
-            var OrganizerEntities = await _organizerRepository.GetAll();
-            var OrganizerModels = _mapper.Map<IEnumerable<OrganizerModel>>(OrganizerEntities);
-            return OrganizerModels;
+            var organizerEntities = await _organizerRepository.GetAll();
+            var organizerModels = _mapper.Map<IEnumerable<OrganizerModel>>(organizerEntities);
+            return organizerModels;
         }
     }
 }

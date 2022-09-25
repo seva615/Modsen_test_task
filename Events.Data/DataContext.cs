@@ -1,5 +1,6 @@
 ﻿using Events.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Events.Data
 {
@@ -24,12 +25,11 @@ namespace Events.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<EventEntity>().HasOne(e => e.Address).WithOne(e => e.Event);
-            modelBuilder.Entity<EventEntity>().HasOne(e => e.Plan).WithOne(e => e.Event);
-            modelBuilder.Entity<OrganizerEntity>().HasMany(e => e.Events).WithOne(e => e.Organizers)
-                .HasForeignKey(e => e.OrganizerId);
-            modelBuilder.Entity<PlanEntity>().HasMany(e => e.Speeches).WithOne(e => e.Plan);
-            modelBuilder.Entity<SpeechEntity>().HasOne(e => e.Speaker).WithMany(e => e.Speeches);
+            modelBuilder.Entity<EventEntity>().HasOne(e => e.Address).WithOne(e=> e.Event).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<EventEntity>().HasOne(e => e.Plan).WithOne(e => e.Event).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<OrganizerEntity>().HasMany(e => e.Events).WithOne(e => e.Organizer).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<PlanEntity>().HasMany(e => e.Speeches).WithOne(e => e.Plan).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<SpeakerEntity>().HasMany(e => e.Speeches).WithOne(e => e.Speaker).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
